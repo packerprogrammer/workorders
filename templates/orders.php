@@ -31,7 +31,7 @@
 	    <th><a href="index.php?orderby=meter_no&dir=<?php echo $dir; if(!empty($prev)) {echo '&string='; echo $prev;} ?>">Meter #</a></th>
             <th><a href="index.php?orderby=date_w&dir=<?php echo $dir; if(!empty($prev)) {echo '&string='; echo $prev;} ?>">Date W.</a></th>
             <th><a href="index.php?orderby=const_no&dir=<?php echo $dir; if(!empty($prev)) {echo '&string='; echo $prev;} ?>">Const. Sum</a></th>		
-	    <th><a href="index.php?orderby=meter_set&dir=<?php echo $dir; if(!empty($prev)) {echo '&string='; echo $prev;} ?>">Meter Set</a></th>
+	    <th>Meter Set</th>
         </tr>
     </thead>
 
@@ -112,40 +112,40 @@
 		{
 			echo "<a href=file://workordr\D_Drive\Workordr\CS\C" . $constfile;	
 			echo "B.GIF target=_blank>";
-			echo " ,B";
+			echo ", B";
 		}
 
 		if (file_exists($filenameC))
                 {
 	                echo "<a href=file://workordr\D_Drive\Workordr\CS\C" . $constfile;
         	        echo "C.GIF target=_blank>";
-                	echo " ,C";
+                	echo ", C";
                 }
 
 		if (file_exists($filenameD))
                 {
                         echo "<a href=file://workordr\D_Drive\Workordr\CS\C" . $constfile;
                         echo "D.GIF target=_blank>";
-                        echo " ,D";
+                        echo ", D";
                 }
 		if (file_exists($filenameE))
                 {
                         echo "<a href=file://workordr\D_Drive\Workordr\CS\C" . $constfile;
                         echo "E.GIF target=_blank>";
-                        echo " ,E";
+                        echo ", E";
                 }
 
 		if (file_exists($filenameF))
                 {
                         echo "<a href=file://workordr\D_Drive\Workordr\CS\C" . $constfile;
                         echo "F.GIF target=_blank>";
-                        echo " ,F";
+                        echo ", F";
                 }
 		if (file_exists($filenameG))
                 {
                         echo "<a href=file://workordr\D_Drive\Workordr\CS\C" . $constfile;
                         echo "G.GIF target=_blank>";
-                        echo " ,G";
+                        echo ", G";
                 }
 	    	
 	    	echo "</a></td>";
