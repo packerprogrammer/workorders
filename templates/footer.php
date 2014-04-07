@@ -2,7 +2,7 @@
             </div>
 
             <div id="bottom">
-                Copyright &#169; John Harvard
+                For help contact Garrett Hensley
             </div>
 
         </div>

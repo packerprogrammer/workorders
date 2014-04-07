@@ -2,6 +2,15 @@
 
     // configuration
     require("../includes/config.php"); 
+    // if the multiple pages checkbox is selected then set flag to return multiple const. summary pages
+    if (isset($_GET["constr"]))
+    {
+    	$pages = 1;
+    }
+    else
+    {
+	$pages = 0;
+    }	
     // if form was submitted
     if (isset($_GET['string']))
     {
@@ -30,7 +39,6 @@
 	{
 	    $dir = "ASC";    	
 	}
-	
         $positions = getWorkOrders(["query" => $myquery,"sortby" => $sortby, "dir" => $dir]); 
 	if (isset($_GET["dir"]))
         {    
@@ -43,7 +51,7 @@
 		$dir = "ASC";
 	    }	   
 	}
-        render("orders.php", ["title" => "Search","positions" => $positions,"prev" => $myquery,"dir" => $dir]);
+        render("orders.php", ["title" => "Search","positions" => $positions,"prev" => $myquery,"dir" => $dir,"pages" => $pages]);
     }
     else if (!empty($_GET["orderby"]) && !empty($_GET["dir"]))
     {	
@@ -69,7 +77,7 @@
 	$dir = "ASC";
 	$sortby = "order_no";	
 	$positions = getWorkOrders(["sortby" => $sortby,"dir" => $dir]);
-	render("orders.php", ["title" => "List All","positions" => $positions,"dir" => $dir]);
-    	apologize("hello world");
+	render("orders.php", ["title" => "List All","positions" => $positions,"dir" => $dir,"pages" => $pages]);
+    	
     }
 ?>

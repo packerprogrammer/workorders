@@ -1,10 +1,15 @@
 <form action="index.php" method="get">
 	</div>
     <fieldset>
+	
         <div class="control-group">
             <input autofocus name="string" placeholder="What are you looking for..." type="text"/> 	     
             <button type="submit" class="btn">Search</button>
         </div>
+         <div>
+            <input type="checkbox" name="constr">Search Multiple Const. Summary Pages?
+        </div>
+
     </fieldset>
 </form>
 
@@ -108,6 +113,9 @@
 
 		echo $position["const"];
 
+		// skip this unless user selects checkbox for quicker load time
+		if ($pages == 1)
+		{
 		if (file_exists($filenameB))
 		{
 			echo "<a href=file://workordr\D_Drive\Workordr\CS\C" . $constfile;	
@@ -147,17 +155,17 @@
                         echo "G.GIF target=_blank>";
                         echo ", G";
                 }
-	    	
+	    	}
 	    	echo "</a></td>";
 	    	print("<td>{$position["mset"]}</td>");
             	print("</tr>");
-	    	$count = $count + 1;	
+	    		
 	    }
 	    else
 	    {
 		print("<td></td>");
 	    }
-
+            $count = $count + 1;
         }
 	
     ?>
