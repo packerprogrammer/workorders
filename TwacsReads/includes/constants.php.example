@@ -20,5 +20,6 @@
 
     // your database's username
     define("USERNAME", "x");
+    //test
 
 ?>
