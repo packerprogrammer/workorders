@@ -1,0 +1,21 @@
+<?php
+
+//configuration
+require ("includes/config.php");
+
+
+$readserial = $_GET["serial"];
+
+echo "Getting Reads";
+$read = [];
+$read = getread($readserial);
+
+if (empty($read)) {
+    echo "Still Looking";
+}
+else
+{
+render("printreads.php", ["title" => "Printing KWH Value","read" => $read]);
+}
+?>
+
