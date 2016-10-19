@@ -2,6 +2,7 @@
 // handles the click event for link 1, sends the query
 var d = new Date();
 var tbase = d.getTime() / 1000;
+var x = 0;
 var myVar = setInterval(getOutput,3000);
 
 function bob() {
@@ -33,8 +34,9 @@ function getOutput() {
     console.log (tcurrent);
     if (tcurrent - tbase > 120) {
         clearInterval(myVar);
+        window.alert("Sorry, could not find a read for the serial number.");
     }    
-    var x = 0
+    
     x = x + 1;
     console.log(x);
     //document.write ('.');
@@ -96,8 +98,14 @@ function getRequest(url, success, error) {
    
    
    
-   require ("includes/config.php");
+   require ("../includes/config.php");
    $readserial = $_POST["serial"];
+   
+   if (!is_numeric($readserial)){
+       // render blank page to get styling
+       render("blank.php");
+       apologize("Serial number must be numeric.");
+   }
    if (isset($_POST['getread'])) {
        //update action
        render("output.php", ["title" => "Get Serial Number","request" => "read", "readserial" => $readserial]);
@@ -107,6 +115,13 @@ function getRequest(url, success, error) {
         //delete action
         //put the serial number in a hidden input to retrieve it from javascript
         render("output.php", ["title" => "Get Serial Number","request" => "last", "readserial" => $readserial]);
+        if (serialexists($readserial)) {
+            //render("output.php", ["title" => "Get Serial Number","request" => "last", "readserial" => $readserial]);
+        }
+        else {
+            apologize("Serial number not found.");
+        }
+        
     } else {
     //no button pressed
         echo 'how did this get here?';

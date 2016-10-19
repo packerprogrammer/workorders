@@ -170,6 +170,10 @@ table td {
   float:left;
   padding-left: 10px;
 }
+#barcode {
+    float:left;
+    padding-left: 5px;
+}
 #formdiv{
   width:700px;
     clear:both;

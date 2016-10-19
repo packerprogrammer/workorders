@@ -7,6 +7,7 @@
         <link href="css/bootstrap.css" rel="stylesheet"/>
         <link href="css/bootstrap-responsive.css" rel="stylesheet"/>
         <link href="css/styles.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
         <?php if (isset($title)): ?>
             <title>Get Reads: <?= htmlspecialchars($title) ?></title>
@@ -18,8 +19,7 @@
     </head>
 
     <body>
-        
-        
+                
         <div class="container">
 
             <div id="top">

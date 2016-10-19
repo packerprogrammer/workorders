@@ -9,7 +9,7 @@
      **********************************************************************/
 
     // display errors, warnings, and notices
-    ini_set("display_errors", true);
+    //ini_set("display_errors", true);
     error_reporting(E_ALL);
 
     // requirements
@@ -18,16 +18,18 @@
 
     // enable sessions
     session_start();
-
+    
     // require authentication for most pages
-    //if (!preg_match("{(?:login|logout|register)\.php$}", $_SERVER["PHP_SELF"])
-
-   // {
-     //   if (empty($_SESSION["id"]))
-     //   {
-    //        redirect("login.php");
-     //   }
-   // }
-
+    if (!preg_match("{(?:login|logout|register)\.php$}", $_SERVER["PHP_SELF"]))
+    {
+        if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== true) 
+        {
+            redirect("login.php");
+        }
+        else
+        {
+           // echo "hello, " . $_SESSION["username"];
+        }
+    }
 ?>
 
