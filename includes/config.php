@@ -9,7 +9,11 @@
      * Configures pages.
      **********************************************************************/
 
+<<<<<<< HEAD
     // display errors, warnings, and notices
+=======
+    // display errors, warnings, and noticess
+>>>>>>> origin/master
     ini_set("display_errors", true);
     error_reporting(E_ALL);
 

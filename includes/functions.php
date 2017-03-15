@@ -6,7 +6,7 @@
      * Computer Science 50
      * Problem Set 7
      *
-     * Helper functions.
+     * Helper functions...
      **********************************************************************/
 
     require_once("constants.php");
@@ -306,7 +306,11 @@
 	$str = $search["query"];
 	
 	// get the portfolio data
+<<<<<<< HEAD
         $result = query("SELECT * FROM worder where name like '%$str%' or order_no like '$str%' or acct_no like '$str%' or pole_no like '$str%' or meter_no like '$str%' or const_no like '$str%' order by $ordr $dir limit 500");
+=======
+        $result = query("SELECT * FROM worder where name like '%$str%' or order_no like '$str%' or acct_no like '$str%' or pole_no like '$str%' or meter_no like '$str%' or const_no like '$str%' order by $ordr $dir limit 100");
+>>>>>>> origin/master
 	//echo "SELECT * FROM worder where name like '%$cow%' limit 100";
         if ($result === false)
         {
