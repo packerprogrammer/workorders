@@ -9,7 +9,7 @@
      * Configures pages.
      **********************************************************************/
 
-    // display errors, warnings, and notices
+    // display errors, warnings, and noticess
     ini_set("display_errors", true);
     error_reporting(E_ALL);
 
